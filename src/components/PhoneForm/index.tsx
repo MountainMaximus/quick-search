@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../Button";
 import styles from "./PhoneForm.module.scss";
 
 export const PhoneForm: React.FC = () => {
@@ -26,7 +27,7 @@ export const PhoneForm: React.FC = () => {
     if (validationResult) {
       alert("Вы были авторизованы по номеру +" + validationResult);
       console.log("phone:", validationResult);
-      navigate("/content");
+      navigate("/product");
     }
   };
   const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,9 +59,7 @@ export const PhoneForm: React.FC = () => {
           <span className={styles.errorMsg}>{validationMassage}</span>
         )}
       </div>
-      <button type="submit" className={styles.button}>
-        Отправить
-      </button>
+      <Button type="submit">Отправить</Button>
     </form>
   );
 };

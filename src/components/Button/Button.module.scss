@@ -1,0 +1,20 @@
+@import "../../scss/var.scss";
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.5em 1em;
+  margin: 0.3rem;
+  border-radius: 5px;
+  border: none;
+  line-height: 1;
+  font-size: 1.2rem;
+  color: $primary;
+  background-color: $white;
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    color: $white;
+    background-color: $lighten;
+  }
+}
