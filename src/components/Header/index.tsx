@@ -6,8 +6,7 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.root}>
       <div className={styles.container}>
-        <div className={styles.header__left}>Left</div>
-        <div className={styles.header__right}>Right</div>
+        <div className={styles.header__left}>Quick Search</div>
       </div>
     </header>
   );

@@ -1,22 +1,23 @@
+$primary: #373748;
+$text: #b4abab;
+$background: #b2b3b4;
+$lighten: darken(#9194a0, 15);
+
+$white: #faf4e1;
+$accent: #fdc91e;
 $sidebar-width: 400px;
 $header-height: 60px;
 
-$hd-bp: 1400px;
-$laptop-bp: 1200px;
-$tablet-bp: 991px;
-$tablet-mini-bp: 767px;
-$mobile-bp: 575px;
+$transition: all 0.3s ease-in-out;
 
-$primery: #373748;
-$primery-text: #ffffff;
-$background: #b4abab;
-$lighten: darken(#9194a0, 15);
+$hd-bp: 2300px;
+$laptop-bp: 1280px;
+$tablet-bp: 991px;
+$tablet-mini-bp: 750px;
+$mobile-bp: 575px;
 
 @mixin breakpoint($bp) {
   @media screen and (max-width: $bp) {
     @content;
   }
-}
-
-@include breakpoint($tablet-bp) {
 }

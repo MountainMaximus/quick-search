@@ -6,10 +6,13 @@
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .container {
   width: 1320px;
+  height: 100%;
   @include breakpoint($hd-bp) {
     width: 1140px;
   }

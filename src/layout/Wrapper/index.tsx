@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Header, Footer } from "../../components";
+import { Header } from "../../components";
 import { Preloader } from "../Preloader";
 import styles from "./Wrapper.module.scss";
 
@@ -19,7 +19,6 @@ export const Wrapper: React.FC = () => {
         <div className={styles.content}>
           <Outlet />
         </div>
-        <Footer />
       </div>
     </div>
   );

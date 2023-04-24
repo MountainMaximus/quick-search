@@ -12,7 +12,7 @@ ul {
 
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: $primery darken($background, 20);
+  scrollbar-color: $primary darken($background, 20);
 
   &::-webkit-scrollbar {
     height: 12px;
@@ -22,7 +22,7 @@ ul {
     background: darken($background, 20);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $primery;
+    background-color: $primary;
     border-radius: 5px;
     border: 3px solid darken($background, 20);
   }
@@ -38,7 +38,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 2rem;
   line-height: 1.5;
-  color: $primery;
+  color: $primary;
+  background-color: $background;
   overflow: auto;
 }
 
