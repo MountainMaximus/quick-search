@@ -13,7 +13,6 @@ export const ProductListPage: React.FC = () => {
       .get<Product[]>(`https://fakestoreapi.com/products`)
       .then((res) => setProduct(res.data));
   }, []);
-  console.log(search);
 
   return (
     <>

@@ -7,11 +7,13 @@
 
   position: relative;
   margin-top: 20px;
-  background-color: $primary;
+  background-color: $white;
+  border-radius: 5px;
+  border: 2px solid $text;
 
   &:hover {
-    background-color: $lighten;
     .title {
+      background-color: $lighten;
       color: $accent;
     }
   }
@@ -26,6 +28,11 @@
     }
   }
   .title {
+    background-color: $primary;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 60px;
     color: $text;
     font-size: 1rem;

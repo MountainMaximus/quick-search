@@ -33,7 +33,6 @@ export const PhoneForm: React.FC = () => {
   const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValidationMassage(null);
     const firstDigit = e.target.value.match(/\d+/)?.[0][0];
-    console.log(Number(e.target.value.match(/\d+/)?.[0][0]));
 
     setPhone(
       firstDigit && firstDigit !== "7" && firstDigit !== "8"
