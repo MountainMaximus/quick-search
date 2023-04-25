@@ -1,0 +1,72 @@
+@import "../../scss/var.scss";
+
+.wrapper {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  z-index: 100;
+
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 5px;
+  background-color: $lighten;
+  display: grid;
+  grid-template-columns: 200px auto;
+
+  @include breakpoint($mobile-bp) {
+    grid-template-columns: 150px auto;
+  }
+  .categoryWrapper {
+    margin: 20px 0 0 15px;
+    @include breakpoint($mobile-bp) {
+      margin-left: 10px;
+    }
+    .item {
+      border: 1px solid $primary;
+      margin-bottom: 5px;
+      padding: 5px;
+      padding-right: 35px;
+      position: relative;
+      border-radius: 3px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        color: $accent;
+        background-color: $primary;
+      }
+      @include breakpoint($mobile-bp) {
+        font-size: 1rem;
+      }
+      .circle {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        z-index: 1;
+        transform: translateY(-50%);
+
+        border-radius: 50%;
+        border: 1px solid $text;
+        color: $text;
+        background-color: $accent;
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .productWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 15px;
+    @include breakpoint($mobile-bp) {
+      padding: 0 10px;
+    }
+  }
+}

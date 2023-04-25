@@ -3,8 +3,13 @@ import styles from "./QuickSearch.module.scss";
 interface IQuickSearch {
   setSearch: (val: string) => void;
   search: string;
+  children: React.ReactNode;
 }
-export const QuickSearch: React.FC<IQuickSearch> = ({ setSearch, search }) => {
+export const QuickSearch: React.FC<IQuickSearch> = ({
+  setSearch,
+  search,
+  children,
+}) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const onClickClear = () => {
     setSearch("");
@@ -33,6 +38,7 @@ export const QuickSearch: React.FC<IQuickSearch> = ({ setSearch, search }) => {
           </svg>
         )}
       </div>
+      {children}
     </div>
   );
 };

@@ -8,11 +8,16 @@ import { Product } from "../type";
 export const ProductPage: React.FC = () => {
   const { id } = useParams();
   const [product, setProduct] = React.useState<Product | null>(null);
+  const [loading, setLoading] = React.useState<boolean>(true);
   const navigate = useNavigate();
   React.useEffect(() => {
+    setLoading(true);
     axios
       .get<Product>(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => setProduct(res.data));
+      .then((res) => {
+        setProduct(res.data);
+      })
+      .finally(() => setLoading(false));
   }, [id]);
 
   return (
@@ -23,7 +28,9 @@ export const ProductPage: React.FC = () => {
         alignItems: "center",
       }}
     >
-      {product ? (
+      {loading ? (
+        <div>Please wait</div>
+      ) : product ? (
         <ProductCard product={product} fullItem={true} />
       ) : (
         <div>Product not found</div>

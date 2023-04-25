@@ -14,8 +14,17 @@ export const PhoneForm: React.FC = () => {
     if (phone)
       if (phone[0] === "8") phone = phone.replace("8", "7");
       else if (phone[0] !== "7") phone = "7" + phone;
-    if (phone?.length !== 11) {
-      setValidationMassage("Введен не корректный номер телефона");
+    const length = phone?.length;
+    if (!length || length < 11) {
+      setValidationMassage("Введен короткий номер телефона");
+      return false;
+    }
+    if (length > 11) {
+      setValidationMassage("Введен длинный номер телефона");
+      return false;
+    }
+    if (phone?.substring(0, 2) !== "79") {
+      setValidationMassage("Введите телефон в формате 79XXXXXXXXX");
       return false;
     }
     return phone;
