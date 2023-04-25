@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { Button } from "../components";
+import { Button, ProductCard } from "../components";
 import { Product } from "../type";
 
 export const ProductPage: React.FC = () => {
@@ -24,14 +24,7 @@ export const ProductPage: React.FC = () => {
       }}
     >
       {product ? (
-        <>
-          <div>{product.title}</div>
-          <img
-            style={{ width: 300, height: "auto" }}
-            src={product.image}
-            alt="Product"
-          />
-        </>
+        <ProductCard product={product} fullItem={true} />
       ) : (
         <div>Product not found</div>
       )}

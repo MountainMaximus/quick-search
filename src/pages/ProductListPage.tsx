@@ -16,14 +16,20 @@ export const ProductListPage: React.FC = () => {
   console.log(search);
 
   return (
-    <div>
+    <>
       <QuickSearch setSearch={setSearch} search={search} />
-      {product &&
-        product.map((obj) => (
-          <Link to={`/product/${obj.id}`} key={obj.id}>
-            <ProductCard product={obj} />
-          </Link>
-        ))}
-    </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+        }}
+      >
+        {product &&
+          product.map((obj) => (
+            <ProductCard product={obj} link={`/product/${obj.id}`} />
+          ))}
+      </div>
+    </>
   );
 };
